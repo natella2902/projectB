@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+const chalk = require("chalk");
+const nodemon = require("nodemon");
+
+if (process.env.NODE_ENV === "production") {
+  console.error(
+    "Do not use nodemon in production, run bin/www directly instead."
+  );
+  process.exit(1);
+}
+
+nodemon({
+  script: `${__dirname}/www`,
+  exec: ` node `,
+})
+  .on("start", () => {
+    console.log(`The application has started ${chalk.green("✓")}`);
+  })
+  .on("restart", (files) => {
+    console.group("Application restarted due to:");
+    files.forEach((file) => console.log(file));
+    console.groupEnd();
+  })
+  .on("quit", () => {
+    console.log("The application has quit, closing ngrok tunnel");
+    ngrok.kill().then(() => process.exit(0));
+  });
