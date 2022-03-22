@@ -5,7 +5,9 @@ class UserController {
       const { email, password, name, userName } = req.body;
       const newUser = userService.create(email, password, name, userName);
       res.send(newUser);
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   }
   async getById(req, res, next) {
     try {
@@ -13,7 +15,7 @@ class UserController {
       const findUser = await userService.findById(userId)
       res.send(findUser)
     } catch (error) {
-
+      throw error;
     }
   }
   async updateUserData(req, res, next) {
@@ -22,28 +24,28 @@ class UserController {
       const findUser = await userService.update(userId, req.body, {new: true})
       res.send(findUser)
     } catch (error) {
-
+      throw error;
     }
   }
   async getCurrentUser(req, res, next) {
     try {
 
     } catch (error) {
-
+      throw error;
     }
   }
   async changeEmail(req, res, next) {
     try {
 
     } catch (error) {
-
+      throw error;
     }
   }
   async changePassword(req, res, next) {
     try {
 
     } catch (error) {
-
+      throw error;
     }
   }
 }

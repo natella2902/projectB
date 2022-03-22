@@ -13,6 +13,7 @@ db.url = `mongodb://${
 )}${config.get("MONGO_USER") ? "?authSource=admin" : ""}`;
 db.user = require("./user.model")(mongoose);
 db.project = require("./project.model")(mongoose);
+db.product = require("./product.model")(mongoose);
 db.log = require("./log.model")(mongoose);
 
 module.exports = db;

@@ -8,5 +8,6 @@ router.get('/', function(req, res, next) {
 
 router.use('/user', require('./user.route'))
 router.use('/project', require('./project.route'))
+router.use('/product', require('./product.route'))
 
 module.exports = router;

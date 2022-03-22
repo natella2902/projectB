@@ -1,10 +1,15 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router({ mergeParams: true });
 var userController = require('../controllers/user.controller');
 
-router.post('/', userController.createUser);
-router.get('/:userId', userController.getById);
-router.patch('/:userId', userController.updateUserData);
+router
+    .route("/")
+    .post(userController.createUser)
+
+router
+    .route('/:userId')
+    .get(userController.getById)
+    .patch(userController.updateUserData)
 
 // router  getCurrentUser(get Me)
 // router changeEmail(check password)

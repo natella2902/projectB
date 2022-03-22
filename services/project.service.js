@@ -29,14 +29,14 @@ class ProjectService {
     try {
 
     } catch (error) {
-
+      throw error;
     }
   }
   async getByUserAccess(id) {
     try {
 
     } catch (error) {
-
+      throw error;
     }
   }
 }

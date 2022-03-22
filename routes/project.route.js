@@ -3,9 +3,14 @@ var router = express.Router();
 var projectController = require('../controllers/project.controller');
 
 
-router.post('/', projectController.createProject);
-router.get('/:projectId', projectController.getProjectById);
-router.patch('/:projectId', projectController.updateProject);
+router
+    .route('/')
+    .post(projectController.createProject)
+
+router
+    .route('/:projectId')
+    .get(projectController.getProjectById)
+    .patch(projectController.updateProject)
 
 // router archive project
 // router get project by user id

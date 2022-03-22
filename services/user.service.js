@@ -27,7 +27,7 @@ class UserService {
     }
   }
 
-  async changeEmail(userId, newPassword) {
+  async changeEmail(userId, newPassword, oldPassword) {
     try {
       const changeUserEmail = await userModel.findByIdAndUpdate(userId, newPassword)
       return changeUserEmail
@@ -36,7 +36,7 @@ class UserService {
     }
   }
 
-  async changePassword(userId, newPassword) {
+  async changePassword(userId, password) {
     try {
     } catch (error) {
       throw error;
