@@ -17,10 +17,10 @@ class ProductService {
       throw error;
     }
   }
-  async archive(id, data) {
+  async archive(id) {
     try {
-      const archiveProject = await productModel.findByIdAndUpdate(id, data)
-      return archiveProject
+      const archiveProduct = await productModel.findByIdAndUpdate(id)
+      return archiveProduct
     } catch (error) {
       throw error;
     }

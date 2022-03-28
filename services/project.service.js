@@ -1,3 +1,4 @@
+const {project: productModel} = require("../models");
 const projectModel = require("../models/index").project;
 
 class ProjectService {
@@ -27,14 +28,16 @@ class ProjectService {
   }
   async archive(id) {
     try {
-
+      const archiveProject = await projectModel.findByIdAndUpdate(id)
+      return archiveProject
     } catch (error) {
       throw error;
     }
   }
   async getByUserAccess(id) {
     try {
-
+      const projectsByUserAccess = await projectModel.find({ userId: id});
+      return projectsByUserAccess
     } catch (error) {
       throw error;
     }

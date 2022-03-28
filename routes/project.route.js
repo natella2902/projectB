@@ -12,7 +12,12 @@ router
     .get(projectController.getProjectById)
     .patch(projectController.updateProject)
 
-// router archive project
-// router get project by user id
+router
+    .route('/:projectId/archive')
+    .patch(projectController.archiveProject)
+
+router
+    .route('/:userId')
+    .get(projectController.getProjectByUserAccess)
 
 module.exports = router;

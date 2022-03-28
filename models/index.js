@@ -14,6 +14,10 @@ db.url = `mongodb://${
 db.user = require("./user.model")(mongoose);
 db.project = require("./project.model")(mongoose);
 db.product = require("./product.model")(mongoose);
+db.essence = require("./essence.model")(mongoose);
+db.order = require("./order.model")(mongoose);
+db.comment = require("./comment.model")(mongoose);
+db.commentLabel = require("./commentLabel.model")(mongoose);
 db.log = require("./log.model")(mongoose);
 
 module.exports = db;

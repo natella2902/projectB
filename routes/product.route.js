@@ -7,11 +7,11 @@ router
     .post(productController.createProduct);
 
 router
-    .route('/:projectId/archive')
+    .route('/:productId/archive')
     .patch(productController.archiveProduct);
 
 router
-    .route('/:projectId')
+    .route('/:productId')
     .patch(productController.updateProduct);
 
 module.exports = router;
